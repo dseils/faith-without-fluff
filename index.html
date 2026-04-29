@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faith Without the Fluff — Christianity for People Who Want the Truth</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #0a0e1a 0%, #1a1f2e 50%, #0f1419 100%);
+            color: #e8e8e8;
+            line-height: 1.7;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 0 60px;
+            background: linear-gradient(180deg, rgba(10,14,26,0.9) 0%, rgba(26,31,46,0.95) 100%);
+        }
+        
+        .eyebrow {
+            font-family: 'Arial', sans-serif;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #4a9eff;
+            margin-bottom: 20px;
+        }
+        
+        .headline {
+            font-size: 52px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            color: #ffffff;
+        }
+        
+        .headline span {
+            color: #4a9eff;
+        }
+        
+        .subheadline {
+            font-size: 22px;
+            color: #a0a8b8;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        
+        .video-container {
+            background: #0d1117;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 40px auto;
+            max-width: 700px;
+            border: 1px solid #21262d;
+        }
+        
+        .video-placeholder {
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8b949e;
+            font-size: 18px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #4a9eff 0%, #2563eb 100%);
+            color: white;
+            font-family: 'Arial', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            padding: 20px 50px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 30px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(74, 158, 255, 0.3);
+        }
+        
+        /* Content Sections */
+        .section {
+            padding: 60px 0;
+            border-bottom: 1px solid #21262d;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        h2 {
+            font-size: 36px;
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        h3 {
+            font-size: 28px;
+            color: #4a9eff;
+            margin: 40px 0 20px;
+        }
+        
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #c9d1d9;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(74, 158, 255, 0.1) 0%, rgba(37, 99, 235, 0.1) 100%);
+            border-left: 4px solid #4a9eff;
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .problem-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .problem-list li {
+            padding: 15px 0 15px 40px;
+            position: relative;
+            font-size: 18px;
+            color: #c9d1d9;
+        }
+        
+        .problem-list li:before {
+            content: "✗";
+            position: absolute;
+            left: 0;
+            color: #f85149;
+            font-weight: bold;
+        }
+        
+        .solution-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .solution-list li {
+            padding: 15px 0 15px 40px;
+            position: relative;
+            font-size: 18px;
+            color: #c9d1d9;
+        }
+        
+        .solution-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #3fb950;
+            font-weight: bold;
+        }
+        
+        .testimonial {
+            background: #161b22;
+            padding: 40px;
+            border-radius: 12px;
+            margin: 40px 0;
+            border: 1px solid #21262d;
+        }
+        
+        .testimonial-text {
+            font-size: 20px;
+            font-style: italic;
+            color: #e8e8e8;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            color: #8b949e;
+            font-size: 16px;
+        }
+        
+        .price-box {
+            background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+            border: 2px solid #4a9eff;
+            border-radius: 16px;
+            padding: 50px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .price {
+            font-size: 64px;
+            font-weight: 700;
+            color: #4a9eff;
+        }
+        
+        .price-period {
+            font-size: 20px;
+            color: #8b949e;
+        }
+        
+        .guarantee {
+            background: rgba(63, 185, 80, 0.1);
+            border: 1px solid #3fb950;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .faq-item {
+            margin: 30px 0;
+            padding: 25px;
+            background: #161b22;
+            border-radius: 8px;
+        }
+        
+        .faq-question {
+            font-size: 20px;
+            font-weight: 600;
+            color: #4a9eff;
+            margin-bottom: 15px;
+        }
+        
+        .faq-answer {
+            font-size: 17px;
+            color: #c9d1d9;
+        }
+        
+        .final-cta {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(180deg, rgba(26,31,46,0.95) 0%, rgba(10,14,26,0.9) 100%);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #6e7681;
+            font-size: 14px;
+            border-top: 1px solid #21262d;
+        }
+    </style>
+</head>
+<body>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <p class="eyebrow">For Spiritual Seekers Who Are Tired of Church Politics</p>
+            <h1 class="headline">Faith Without the <span>Fluff</span></h1>
+            <p class="subheadline">Christianity for people who want the truth, not the trimmings. No worship music. No guilt trips. No building fund appeals. Just honest conversation about faith.</p>
+            
+            <div class="video-container">
+                <div class="video-placeholder">
+                    [VSL Video Will Be Embedded Here]
+                </div>
+            </div>
+            
+            <a href="#join" class="cta-button">Start Your Journey — $9/Month</a>
+        </div>
+    </section>
+
+    <!-- THE PROBLEM -->
+    <section class="section">
+        <div class="container">
+            <h2>Does This Sound Familiar?</h2>
+            <p>You're spiritually curious. You want to explore Christianity, learn about Jesus, understand the Bible. But every time you try to engage with church or Christian content, you run into the same frustrating roadblocks...</p>
+            
+            <ul class="problem-list">
+                <li>You ask a hard question and get told to "just have faith"</li>
+                <li>You express doubt and feel judged or shamed</li>
+                <li>You want substance but get 20 minutes of worship music instead</li>
+                <li>You crave community but find only surface-level small talk</li>
+                <li>You want to explore at your own pace but feel pressured to commit</li>
+                <li>You seek honest answers but get rehearsed talking points</li>
+                <li>You want to question but are told to "pray about it" and move on</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <p><strong>Here's the truth:</strong> You're not broken. You're not "less than" because you have questions. You're not a bad Christian because you don't fit the mold. The problem isn't you — it's that most churches and Christian content are designed for believers, not seekers.</p>
+            </div>
+            
+            <p>What if there was a space where you could explore Christianity without judgment? Where questions weren't just tolerated but welcomed? Where you could be honest about your doubts without being preached at?</p>
+        </div>
+    </section>
+
+    <!-- THE SOLUTION -->
+    <section class="section">
+        <div class="container">
+            <h2>Introducing: Faith Without the Fluff</h2>
+            <p>A podcast and community for people who want Christianity without the church politics. No fluff. No filler. Just honest conversation about faith, doubt, and everything in between.</p>
+            
+            <h3>What You Get:</h3>
+            <ul class="solution-list">
+                <li><strong>Weekly Podcast Episodes</strong> — 20-30 minutes of substance, not sermons. Real talk about real questions.</li>
+                <li><strong>Private Community Access</strong> — Connect with others on the same journey. No judgment, no preaching.</li>
+                <li><strong>Monthly Live Q&A</strong> — Bring your hardest questions. We'll explore them together.</li>
+                <li><strong>Resource Library</strong> — Articles, book recommendations, discussion guides for deeper exploration.</li>
+                <li><strong>On-Demand Access</strong> — Listen when you want, how you want. No Sunday morning obligation.</li>
+            </ul>
+            
+            <div class="testimonial">
+                <p class="testimonial-text">"I left church five years ago and thought I was done with Christianity. Faith Without the Fluff helped me realize I could have a relationship with Jesus without all the institutional baggage. It's been transformative."</p>
+                <p class="testimonial-author">— Sarah M., Member since 2025</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHO THIS IS FOR -->
+    <section class="section">
+        <div class="container">
+            <h2>This Is For You If...</h2>
+            <p>✓ You're spiritually curious but church-shy</p>
+            <p>✓ You have questions that feel "forbidden" in Christian spaces</p>
+            <p>✓ You want substance without the Sunday morning production</p>
+            <p>✓ You've been hurt by church but still feel drawn to Jesus</p>
+            <p>✓ You're a former Christian exploring what you actually believe</p>
+            <p>✓ You want community without commitment pressure</p>
+            <p>✓ You value honesty over religious correctness</p>
+            
+            <div class="highlight-box">
+                <p><strong>This is NOT for you if:</strong> You want someone to tell you what to believe. We're explorers, not enforcers. If you're looking for dogma, there are plenty of churches for that. We're here for the curious, the questioning, and the honest.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE OFFER -->
+    <section class="section" id="join">
+        <div class="container">
+            <h2>Join Faith Without the Fluff</h2>
+            
+            <div class="price-box">
+                <p style="font-size: 18px; color: #8b949e; margin-bottom: 10px;">Supporter Membership</p>
+                <div class="price">$9<span style="font-size: 24px;">/mo</span></div>
+                <p class="price-period">Or save with $99/year</p>
+                <br>
+                <a href="#" class="cta-button">Get Instant Access</a>
+            </div>
+            
+            <h3>What's Included:</h3>
+            <ul class="solution-list">
+                <li>Weekly podcast episodes (ad-free, early access)</li>
+                <li>Private Discord community</li>
+                <li>Monthly live Q&A calls</li>
+                <li>Resource library with discussion guides</li>
+                <li>Direct access to ask questions</li>
+                <li>Cancel anytime — no guilt, no hassle</li>
+            </ul>
+            
+            <div class="guarantee">
+                <h3 style="color: #3fb950; margin-bottom: 15px;">30-Day Money-Back Guarantee</h3>
+                <p>Try Faith Without the Fluff for 30 days. If it's not for you, email us for a full refund. No questions asked. No guilt trips. We promise.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <p class="faq-question">Is this a church?</p>
+                <p class="faq-answer">No. We're a podcast and online community. There's no denomination, no building, no pastor. Just people exploring faith together.</p>
+            </div>
+            
+            <div class="faq-item">
+                <p class="faq-question">Do I have to be a Christian to join?</p>
+                <p class="faq-answer">Absolutely not. We have members who are agnostic, atheist, Buddhist, "spiritual but not religious," and everything in between. Curiosity is the only requirement.</p>
+            </div>
+            
+            <div class="faq-item">
+                <p class="faq-question">What if I have really hard questions?</p>
+                <p class="faq-answer">Bring them. Questions about suffering? The Bible's contradictions? Science and faith? Hell? We've tackled them all. No topic is off-limits.</p>
+            </div>
+            
+            <div class="faq-item">
+                <p class="faq-question">Will you try to convert me?</p>
+                <p class="faq-answer">No. We're not recruiters. We're explorers. Our goal is to help you find your own path, not to get you to sign on a dotted line.</p>
+            </div>
+            
+            <div class="faq-item">
+                <p class="faq-question">Can I cancel anytime?</p>
+                <p class="faq-answer">Yes. No contracts, no exit interviews, no guilt. Cancel from your account dashboard or email us — we'll handle it immediately.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Start Your Journey Today</h2>
+            <p style="font-size: 20px; color: #a0a8b8; max-width: 600px; margin: 0 auto 40px;">Join hundreds of seekers who are exploring Christianity on their own terms. No fluff. No pressure. Just honest conversation.</p>
+            <a href="#" class="cta-button">Join Now — $9/Month</a>
+            <p style="margin-top: 30px; color: #6e7681;">30-day money-back guarantee. Cancel anytime.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Faith Without the Fluff. All rights reserved.</p>
+            <p style="margin-top: 10px;">Questions? Contact us at hello@faithwithoutthefluff.com</p>
+        </div>
+    </footer>
+</body>
+</html>
