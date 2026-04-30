@@ -1,13 +1,31 @@
-name: Deploy
+name: Deploy to Vercel
 
 on:
   push:
     branches: [master, main]
+  pull_request:
+    branches: [master, main]
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Deploy
-        run: echo "Vercel will auto-deploy via Git integration"
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Deploy to Vercel (Production)
+        if: github.event_name == 'push'
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}  
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: '--prod'
+          
+      - name: Deploy to Vercel (Preview)
+        if: github.event_name == 'pull_request'
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
