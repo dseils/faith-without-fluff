@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Refined Cairn - Hand-placed stones -->
+  
+  <!-- Bottom stone - largest, grounded -->
+  <ellipse cx="100" cy="145" rx="45" ry="25" fill="#6B6B6B"/>
+  <ellipse cx="100" cy="142" rx="42" ry="22" fill="#7A7A7A"/>
+  
+  <!-- Middle stone - balanced imperfectly -->
+  <ellipse cx="98" cy="115" rx="32" ry="20" fill="#7A7A7A"/>
+  <ellipse cx="98" cy="112" rx="29" ry="17" fill="#8A8A8A"/>
+  
+  <!-- Top stone - smallest, slightly offset -->
+  <ellipse cx="100" cy="90" rx="18" ry="12" fill="#8A8A8A"/>
+  <ellipse cx="100" cy="88" rx="15" ry="10" fill="#9A9A9A"/>
+  
+  <!-- Shadow beneath -->
+  <ellipse cx="100" cy="165" rx="50" ry="8" fill="#E5E5E5" opacity="0.5"/>
+</svg>
