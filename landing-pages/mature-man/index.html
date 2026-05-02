@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faith Without the Fluff — For Those Who've Seen Enough</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --navy: #1A2B3C;
+            --navy-light: #2A3B4C;
+            --charcoal: #2D2D2D;
+            --ivory: #FAFAF8;
+            --cream: #F5F4F0;
+            --rust: #B85C38;
+            --rust-light: #C97B5C;
+            --gray: #6B7280;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--ivory);
+            color: var(--charcoal);
+            line-height: 1.7;
+            font-size: 18px;
+        }
+        
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+        
+        /* Header */
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid #E5E5E0;
+            background: var(--ivory);
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--navy);
+            letter-spacing: -0.5px;
+        }
+        
+        /* Hero */
+        .hero {
+            padding: 80px 0 60px;
+            background: var(--ivory);
+        }
+        
+        .hero-meta {
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--rust);
+            margin-bottom: 24px;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 28px;
+            color: var(--navy);
+        }
+        
+        .hero-subtitle {
+            font-size: 20px;
+            color: var(--gray);
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        
+        /* Video Section */
+        .video-section {
+            padding: 0 0 80px;
+            background: var(--ivory);
+        }
+        
+        .video-wrapper {
+            max-width: 640px;
+            margin: 0 auto;
+            background: var(--navy);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(26,43,60,0.25);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+        }
+        
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--navy-light) 0%, var(--navy) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--ivory);
+        }
+        
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: var(--rust);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 20px;
+        }
+        
+        .play-button:hover {
+            transform: scale(1.05);
+            background: var(--rust-light);
+        }
+        
+        .play-button::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 24px solid white;
+            border-top: 14px solid transparent;
+            border-bottom: 14px solid transparent;
+            margin-left: 6px;
+        }
+        
+        .video-label {
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .content-section.alt {
+            background: var(--cream);
+        }
+        
+        .section-header {
+            margin-bottom: 48px;
+        }
+        
+        .section-number {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--rust);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 400;
+            color: var(--navy);
+            line-height: 1.3;
+        }
+        
+        .body-text {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--charcoal);
+        }
+        
+        .body-text p {
+            margin-bottom: 28px;
+        }
+        
+        .pull-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-style: italic;
+            color: var(--navy);
+            padding: 40px 0;
+            margin: 48px 0;
+            border-left: 4px solid var(--rust);
+            padding-left: 32px;
+        }
+        
+        /* Features */
+        .features-grid {
+            display: grid;
+            gap: 32px;
+            margin-top: 48px;
+        }
+        
+        .feature-item {
+            display: flex;
+            gap: 20px;
+            padding: 28px;
+            background: var(--white);
+            border-radius: 8px;
+            border: 1px solid #E5E5E0;
+        }
+        
+        .feature-icon {
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+        
+        .feature-content h3 {
+            font-size: 19px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--navy);
+        }
+        
+        .feature-content p {
+            font-size: 16px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        
+        /* Lists */
+        .check-list {
+            list-style: none;
+            margin-top: 40px;
+        }
+        
+        .check-list li {
+            padding: 16px 0;
+            padding-left: 36px;
+            position: relative;
+            border-bottom: 1px solid #E5E5E0;
+            font-size: 17px;
+        }
+        
+        .check-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--rust);
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        /* Audience */
+        .audience-grid {
+            display: grid;
+            gap: 32px;
+            margin-top: 48px;
+        }
+        
+        .audience-card {
+            padding: 40px;
+            border-radius: 8px;
+        }
+        
+        .audience-card.yes {
+            background: linear-gradient(135deg, #F0F4F0 0%, #E8F0E8 100%);
+            border: 1px solid #D0E0D0;
+        }
+        
+        .audience-card.no {
+            background: linear-gradient(135deg, #F8F5F5 0%, #F0E8E8 100%);
+            border: 1px solid #E0D0D0;
+        }
+        
+        .audience-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .audience-card.yes h3 {
+            color: var(--navy);
+        }
+        
+        .audience-card.no h3 {
+            color: #8B6B6B;
+        }
+        
+        .audience-card ul {
+            list-style: none;
+        }
+        
+        .audience-card li {
+            padding: 12px 0;
+            padding-left: 28px;
+            position: relative;
+            font-size: 17px;
+        }
+        
+        .audience-card.yes li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--rust);
+            font-weight: 700;
+        }
+        
+        .audience-card.no li::before {
+            content: '✕';
+            position: absolute;
+            left: 0;
+            color: #C4A0A0;
+            font-weight: 700;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: var(--navy);
+            color: var(--ivory);
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            color: var(--ivory);
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-subtitle {
+            font-size: 20px;
+            opacity: 0.8;
+            margin-bottom: 48px;
+        }
+        
+        .price-block {
+            margin-bottom: 40px;
+        }
+        
+        .price {
+            font-size: 64px;
+            font-weight: 300;
+            letter-spacing: -2px;
+        }
+        
+        .price span {
+            font-size: 24px;
+            opacity: 0.6;
+            font-weight: 400;
+        }
+        
+        .price-note {
+            font-size: 16px;
+            opacity: 0.7;
+            margin-top: 8px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--rust);
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 20px 48px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+        }
+        
+        .cta-button:hover {
+            background: var(--rust-light);
+            transform: translateY(-1px);
+        }
+        
+        .guarantee {
+            margin-top: 28px;
+            font-size: 14px;
+            opacity: 0.6;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background: #152030;
+            color: var(--gray);
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 640px) {
+            h1 { font-size: 36px; }
+            h2 { font-size: 28px; }
+            .pull-quote { font-size: 22px; }
+            .container { padding: 0 24px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Faith Without the Fluff</div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <div class="hero-meta">An Invitation</div>
+            <h1>I've sat in pews. I've heard the promises.</h1>
+            <p class="hero-subtitle">And I've seen enough to know that institutions sometimes fail the very people they claim to serve. Maybe you're like me—carrying some disappointment. Some questions you were told not to ask.</p>
+        </div>
+    </section>
+    
+    <section class="video-section">
+        <div class="container">
+            <div class="video-wrapper">
+                <div class="video-container">
+                    <div class="video-placeholder">
+                        <div class="play-button"></div>
+                        <span class="video-label">Watch the Invitation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h2>The Real Issue</h2>
+            </div>
+            
+            <div class="body-text">
+                <p>I didn't walk away from faith because I stopped believing. I walked away because I couldn't pretend anymore.</p>
+                
+                <p>Couldn't pretend the questions didn't matter. Couldn't pretend the answers satisfied. Couldn't pretend that showing up on Sunday was the same as actually believing.</p>
+                
+                <p>I wanted substance. I got politics. I wanted honesty. I got performance.</p>
+                
+                <div class="pull-quote">"Doubt isn't the enemy of faith. Dishonesty is."</div>
+                
+                <p>The problem isn't that we have questions. It's that we've been taught to bury them. To perform certainty we don't feel. To act like we've arrived when we're still very much on the journey.</p>
+                
+                <p>You're not broken for needing something real.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="content-section alt">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h2>What You'll Find Here</h2>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🎙️</div>
+                    <div class="feature-content">
+                        <h3>Weekly Podcast Episodes</h3>
+                        <p>Substantive conversations, not sermons. Real talk about faith, doubt, and what it means to follow Jesus.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">💬</div>
+                    <div class="feature-content">
+                        <h3>Private Community</h3>
+                        <p>Engage at your level. No performance required.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">📞</div>
+                    <div class="feature-content">
+                        <h3>Monthly Live Q&A</h3>
+                        <p>No question is off-limits. No topic is too difficult.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">📚</div>
+                    <div class="feature-content">
+                        <h3>Resource Library</h3>
+                        <p>Articles, recommendations, and guides for deeper exploration.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <ul class="check-list">
+                <li>No worship music</li>
+                <li>No guilt trips</li>
+                <li>No building fund appeals</li>
+                <li>Permission—finally—to be honest about where you are</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h2>Is This For You?</h2>
+            </div>
+            
+            <div class="audience-grid">
+                <div class="audience-card yes">
+                    <h3>This IS for you if...</h3>
+                    <ul>
+                        <li>You've been burned but still hope</li>
+                        <li>You want depth without dogma</li>
+                        <li>You value integrity over religious correctness</li>
+                        <li>You're tired of pretending</li>
+                    </ul>
+                </div>
+                
+                <div class="audience-card no">
+                    <h3>This is NOT for you if...</h3>
+                    <ul>
+                        <li>You want easy answers</li>
+                        <li>You're looking for a traditional church</li>
+                        <li>You want someone to tell you what to believe</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <h2>This isn't about going back. It's about going forward.</h2>
+            <p class="cta-subtitle">You already belong here.</p>
+            
+            <div class="price-block">
+                <div class="price">$9<span>/month</span></div>
+                <p class="price-note">Less than two coffees. Cancel anytime.</p>
+            </div>
+            
+            <a href="https://buy.stripe.com/test_fZu7sKadXeeZ7FC5opdjO00" class="cta-button">Join the Community</a>
+            
+            <p class="guarantee">30-day money-back guarantee. No questions asked.</p>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Faith Without the Fluff</p>
+            <p style="margin-top: 8px; opacity: 0.7;">A project by Donald D. Seils</p>
+        </div>
+    </footer>
+</body>
+</html>

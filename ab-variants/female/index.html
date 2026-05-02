@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faith Without the Fluff — Christianity for People Who Want the Truth</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #ffffff; color: #1a1a1a; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 80px 0 60px; text-align: center; }
+        .eyebrow { font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; color: #60a5fa; margin-bottom: 20px; }
+        .headline { font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 700; line-height: 1.1; margin-bottom: 20px; max-width: 900px; margin-left: auto; margin-right: auto; }
+        .headline span { color: #60a5fa; }
+        .subheadline { font-size: 22px; color: #94a3b8; max-width: 700px; margin: 0 auto 40px; }
+        .video-wrapper { max-width: 900px; margin: 40px auto; background: #0f172a; border-radius: 16px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+        .video-container video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        .cta-section { background: #f8fafc; padding: 60px 0; text-align: center; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: white; font-size: 20px; font-weight: 600; padding: 20px 48px; border-radius: 12px; text-decoration: none; transition: all 0.3s; box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3); }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 20px 40px rgba(37, 99, 235, 0.4); }
+        .price-tag { font-size: 18px; color: #64748b; margin-top: 16px; }
+        .guarantee { font-size: 14px; color: #94a3b8; margin-top: 12px; }
+        .section { padding: 80px 0; }
+        .section-alt { background: #f1f5f9; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 700; text-align: center; margin-bottom: 20px; color: #0f172a; }
+        .section-subtitle { font-size: 20px; color: #64748b; text-align: center; max-width: 700px; margin: 0 auto 60px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-top: 48px; }
+        .card { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        .card h3 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 16px; color: #0f172a; }
+        .card p { color: #64748b; line-height: 1.7; }
+        .quote-section { background: #0f172a; color: white; padding: 100px 0; text-align: center; }
+        .quote { font-family: 'Playfair Display', serif; font-size: 36px; font-style: italic; max-width: 800px; margin: 0 auto 40px; line-height: 1.4; }
+        .quote-author { font-size: 18px; color: #94a3b8; }
+        .features { list-style: none; max-width: 600px; margin: 40px auto; }
+        .features li { padding: 16px 0; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; font-size: 18px; }
+        .features li::before { content: '✓'; display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: #2563eb; color: white; border-radius: 50%; margin-right: 16px; font-size: 14px; font-weight: 700; }
+        .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1000px; margin: 60px auto; }
+        .for-you, .not-for-you { padding: 40px; border-radius: 16px; }
+        .for-you { background: #ecfdf5; border: 2px solid #10b981; }
+        .not-for-you { background: #fef2f2; border: 2px solid #ef4444; }
+        .for-you h3 { color: #047857; font-size: 24px; margin-bottom: 20px; }
+        .not-for-you h3 { color: #b91c1c; font-size: 24px; margin-bottom: 20px; }
+        .for-you ul, .not-for-you ul { list-style: none; }
+        .for-you li, .not-for-you li { padding: 12px 0; padding-left: 28px; position: relative; color: #374151; }
+        .for-you li::before { content: '✓'; position: absolute; left: 0; color: #10b981; font-weight: 700; }
+        .not-for-you li::before { content: '✕'; position: absolute; left: 0; color: #ef4444; font-weight: 700; }
+        .about-section { background: #f8fafc; padding: 100px 0; }
+        .about-content { max-width: 800px; margin: 0 auto; text-align: center; }
+        .about-content h2 { font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 20px; color: #0f172a; }
+        .about-content p { font-size: 18px; color: #64748b; line-height: 1.8; margin-bottom: 16px; }
+        .final-cta { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 100px 0; text-align: center; }
+        .final-cta h2 { font-family: 'Playfair Display', serif; font-size: 48px; margin-bottom: 24px; }
+        .final-cta p { font-size: 20px; color: #94a3b8; max-width: 600px; margin: 0 auto 40px; }
+        .final-cta .cta-button { background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%); font-size: 24px; padding: 24px 60px; }
+        footer { background: #020617; color: #64748b; padding: 40px 0; text-align: center; font-size: 14px; }
+        @media (max-width: 768px) { .headline { font-size: 36px; } .section-title { font-size: 32px; } .two-column { grid-template-columns: 1fr; gap: 32px; } .quote { font-size: 24px; } }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <div class="eyebrow">For the Spiritually Curious</div>
+            <h1 class="headline">Faith Without <span>the Fluff</span></h1>
+            <p class="subheadline">Christianity for people who want the truth—without the church politics, guilt trips, or building fund appeals.</p>
+            <div class="video-wrapper">
+                <div class="video-container">
+                    <video controls playsinline style="width: 100%; height: 100%; border-radius: 8px;">
+                        <source src="https://files2.heygen.ai/aws_pacific/avatar_tmp/9728d1e816234940b63bf6d808f97f55/v59cd0c6ca9234353be97e058289130aa/346c2eae470e4831b66a2d9d741e6e70.mp4?Expires=1778290662&Signature=PbzuQjR3kpfuqRAkMImkVrdHbXBg0eFAiSwNXf9UybC7m8wRkDynBhxi1LPjKPZr67tsCyRos6nNjtPs6O86tUps355h6nLsIJQG--KCcoJq0QfJLlE1m84sZbyCAykIG~vteMXYBWi0GgaOO--m9deyVvWxudZ3-8ffDyx93IR-5rYd97z4sYuHUDmlfv5NM7SuyxCk7oFP9IhPGE9yftQfvBIcrTgRYdylwK~OdKJT3ZRNQ4lJwDPBidLr5pc6dmNkpfGCpCPzg67ZXEkNKCUTfDcd0K~GT7ZkncCVT0NoEkIqgkKnZ7HBlIxomw~t98WSVG9aaXNXK3H1zmSPbQ__&Key-Pair-Id=K38HBHX5LX3X2H" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cta-section">
+        <div class="container">
+            <a href="https://buy.stripe.com/test_fZu7sKadXeeZ7FC5opdjO00" class="cta-button">Join Now — $9/Month</a>
+            <p class="price-tag">Less than two coffees. Cancel anytime.</p>
+            <p class="guarantee">30-day money-back guarantee. No questions asked.</p>
+        </div>
+    </section>
+    <section class="section section-alt" id="what-you-get">
+        <div class="container">
+            <h2 class="section-title">What You Get</h2>
+            <p class="section-subtitle">A podcast and community for people who want Christianity without the church politics.</p>
+            <div class="grid">
+                <div class="card"><h3>🎙️ Weekly Podcast Episodes</h3><p>20-30 minutes of real conversation—not sermons. Honest discussion about faith, doubt, and what it means to follow Jesus in today's world.</p></div>
+                <div class="card"><h3>💬 Private Community</h3><p>Questions aren't just tolerated, they're welcomed. Connect with others on the same journey in a judgment-free space.</p></div>
+                <div class="card"><h3>📞 Monthly Live Q&A Calls</h3><p>Bring your hardest questions. Get honest answers. No topic is off-limits.</p></div>
+                <div class="card"><h3>📚 Resource Library</h3><p>Articles, book recommendations, and discussion guides for deeper exploration.</p></div>
+            </div>
+            <ul class="features"><li>No worship music</li><li>No guilt trips</li><li>No building fund appeals</li><li>No dogma—just honest conversation</li></ul>
+        </div>
+    </section>
+    <section class="quote-section">
+        <div class="container">
+            <blockquote class="quote">"You're not broken. You're not 'less than' because you have questions. You're not a bad Christian because you don't fit the mold."</blockquote>
+            <p class="quote-author">— Donald Seils, Founder</p>
+        </div>
+    </section>
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2>Meet Donald</h2>
+                <p>Donald Seils is a retired ordained minister who's spent decades watching good people get turned away from Christianity—not by Jesus, but by the institutions built around him.</p>
+                <p>That's why he created Faith Without the Fluff: a space for honest conversation about faith, doubt, and what it really means to follow Jesus without the church politics.</p>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Is This For You?</h2>
+            <p class="section-subtitle">We're explorers, not enforcers. Here's who this is (and isn't) for:</p>
+            <div class="two-column">
+                <div class="for-you"><h3>This IS for you if...</h3><ul><li>You're spiritually curious but church-shy</li><li>You have questions that feel "forbidden" in Christian spaces</li><li>You've been hurt by church but still feel drawn to Jesus</li><li>You value honesty over religious correctness</li><li>You want to figure out what YOU believe</li></ul></div>
+                <div class="not-for-you"><h3>This is NOT for you if...</h3><ul><li>You want someone to tell you what to believe</li><li>You're looking for dogma and doctrine</li><li>You want traditional church services</li><li>You're not open to questions and exploration</li></ul></div>
+            </div>
+        </div>
+    </section>
+    <section class="section section-alt" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Simple, Honest Pricing</h2>
+            <p class="section-subtitle">No hidden fees. No upsells. Just straightforward access.</p>
+            <div class="card" style="max-width: 500px; margin: 0 auto; text-align: center; padding: 60px;">
+                <h3 style="font-size: 48px; margin-bottom: 16px;">$9<span style="font-size: 24px; color: #64748b;">/month</span></h3>
+                <p style="margin-bottom: 32px;">That's less than two coffees. For that, you get:</p>
+                <ul style="text-align: left; list-style: none; margin-bottom: 40px;">
+                    <li style="padding: 12px 0; border-bottom: 1px solid #e2e8f0;">✓ Weekly podcast episodes</li>
+                    <li style="padding: 12px 0; border-bottom: 1px solid #e2e8f0;">✓ Private community access</li>
+                    <li style="padding: 12px 0; border-bottom: 1px solid #e2e8f0;">✓ Monthly live Q&A calls</li>
+                    <li style="padding: 12px 0; border-bottom: 1px solid #e2e8f0;">✓ Full resource library</li>
+                    <li style="padding: 12px 0;">✓ Cancel anytime—no hassle</li>
+                </ul>
+                <a href="https://buy.stripe.com/test_fZu7sKadXeeZ7FC5opdjO00" class="cta-button" style="width: 100%;">Get Started Now</a>
+                <p style="margin-top: 20px; font-size: 14px; color: #64748b;">30-day money-back guarantee. No questions asked.</p>
+            </div>
+        </div>
+    </section>
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready for Honest Conversation?</h2>
+            <p>If you're tired of the fluff and ready for real talk about faith, click below and join us. No pressure. No judgment.</p>
+            <a href="https://buy.stripe.com/test_fZu7sKadXeeZ7FC5opdjO00" class="cta-button">Join Faith Without the Fluff</a>
+        </div>
+    </section>
+    <footer><div class="container"><p>&copy; 2026 Faith Without the Fluff. All rights reserved.</p><p style="margin-top: 8px;">A project by Donald D. Seils</p></div></footer>
+</body>
+</html>
